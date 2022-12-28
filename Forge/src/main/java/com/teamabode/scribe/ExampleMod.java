@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.teamabode.scribe;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;

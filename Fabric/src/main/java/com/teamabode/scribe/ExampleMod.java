@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.teamabode.scribe;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;

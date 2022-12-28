@@ -1,7 +1,7 @@
-package com.example.examplemod.platform;
+package com.teamabode.scribe.platform;
 
-import com.example.examplemod.Constants;
-import com.example.examplemod.platform.services.IPlatformHelper;
+import com.teamabode.scribe.Constants;
+import com.teamabode.scribe.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 

@@ -1,6 +1,6 @@
-package com.example.examplemod;
+package com.teamabode.scribe;
 
-import com.example.examplemod.platform.Services;
+import com.teamabode.scribe.platform.Services;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
