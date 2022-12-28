@@ -13,7 +13,8 @@ public class Scribe {
 
     public static RegisteryBase registery;
 
-    public static final Supplier<Item> TEST_ITEM = () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(16));
+    public static final Supplier<Item> TEST_ITEM = () -> new Item(
+            new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(16));
 
     public static void initialize() {
         Scribe.LOGGER.info("Running initialization for Scribe COMMON...");
