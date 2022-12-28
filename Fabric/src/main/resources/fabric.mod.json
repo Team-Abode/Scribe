@@ -1,31 +1,29 @@
 {
     "schemaVersion": 1,
-    "id": "modid",
+    "id": "scribe",
     "version": "${version}",
-  
-    "name": "Example Mod",
-    "description": "This is an example description! Tell everyone what your mod is about!",
+    "name": "Scribe",
+    "description": "A library designed for multi-loader projects, mainly used by Team Abode.",
     "authors": [
-      "Me!"
+      "Team Abode",
+      "ExDrill",
+      "OuterCloudStudio"
     ],
     "contact": {
-      "homepage": "https://fabricmc.net/",
-      "sources": "https://github.com/FabricMC/fabric-example-mod"
+      "homepage": "",
+      "sources": ""
     },
-  
     "license": "CC0-1.0",
-    "icon": "assets/modid/icon.png",
-  
+    "icon": "assets/scribe/icon.png",
     "environment": "*",
     "entrypoints": {
       "main": [
-        "com.teamabode.scribe.ExampleMod"
+        "com.teamabode.scribe.ScribeFabric"
       ]
     },
     "mixins": [
-      "modid.mixins.json"
+      "scribe.mixins.json"
     ],
-  
     "depends": {
       "fabricloader": ">=0.14",
       "fabric": "*",
