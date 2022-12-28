@@ -7,13 +7,19 @@ import net.minecraft.resources.ResourceLocation;
 
 public class ScribeFabric implements ModInitializer {
 
-    public void onInitialize() {
-        Scribe.init();
-        Scribe.LOGGER.info("Hello Fabric World!");
+    private void preInitialize(){
+        Scribe.LOGGER.info("Running pre-initialization for Scribe FABRIC...");
 
-        Registry.register(Registry.ITEM, new ResourceLocation(Scribe.MOD_ID, "test_item"), Scribe.TEST_ITEM.get());
-        
-        // Fabric implementation of the example hook.
-        ItemTooltipCallback.EVENT.register(Scribe::onItemTooltip);
+        Scribe.registery = new Registery();
+    }
+
+    private void postInitialize(){
+        Scribe.LOGGER.info("Running post-initialization for Scribe FABRIC...");
+    }
+
+    public void onInitialize() {
+        preInitialize();
+        Scribe.initialize();
+        postInitialize();
     }
 }

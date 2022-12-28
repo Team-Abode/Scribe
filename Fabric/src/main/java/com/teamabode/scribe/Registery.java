@@ -1,21 +1,19 @@
 package com.teamabode.scribe;
 
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-public class Registery implements RegisteryInterface {
-    @Override
-    public void setModId(String id) {
-        
-    }
+import java.util.function.Supplier;
 
+public class Registery extends RegisteryBase {
     @Override
-    public Item register(String identifier, Item item) {
-        return null;
-    }
+    public Supplier<Item> register(String identifier, Supplier<Item> item) {
+        if(!hasSetModId) throw new AssertionError("You need to set a mod id before registering!");
 
-    @Override
-    public Block register(String identifier, Block block) {
-        return null;
+        Registry.register(Registry.ITEM, new ResourceLocation(modId, identifier), item.get());
+
+        return item;
     }
 }

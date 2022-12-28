@@ -1,29 +1,37 @@
 package com.teamabode.scribe;
 
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Scribe.MOD_ID)
 public class ScribeForge {
+    private void preInitialize(){
+        Scribe.LOGGER.info("Running pre-initialization for Scribe FORGE...");
 
-    public static final DeferredRegister<Item> DEF_REG = DeferredRegister.create(ForgeRegistries.ITEMS, Scribe.MOD_ID);
-    
-    public ScribeForge() {
-        Scribe.init();
-        Scribe.LOGGER.info("Hello Forge World!");
-
-        DEF_REG.register("test_item", Scribe.TEST_ITEM);
-    
-        // Forge implementation of the example hook (1/2)
-        MinecraftForge.EVENT_BUS.addListener(this::onItemTooltip);
+        Scribe.registery = new Registery();
     }
 
-    // Forge implementation of the example hook (2/2)
-    private void onItemTooltip(ItemTooltipEvent event) {
-        Scribe.onItemTooltip(event.getItemStack(), event.getFlags(), event.getToolTip());
+    private void postInitialize(){
+        Scribe.LOGGER.info("Running post-initialization for Scribe FORGE...");
+
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ((Registery)Scribe.registery).registerEventBus(eventBus);
+
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    public ScribeForge() {
+        preInitialize();
+        Scribe.initialize();
+        postInitialize();
     }
 }
