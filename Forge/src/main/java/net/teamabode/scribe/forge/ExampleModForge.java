@@ -1,7 +1,7 @@
-package net.examplemod.forge;
+package net.teamabode.scribe.forge;
 
 import dev.architectury.platform.forge.EventBuses;
-import net.examplemod.ExampleMod;
+import net.teamabode.scribe.ExampleMod;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 

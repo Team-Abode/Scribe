@@ -15,7 +15,7 @@ OuterCloudStudio
 description = '''
 Library for the Team Abode mods.
 '''
-#logoFile = "icon.png"
+logoFile = "icon.png"
 
 [[dependencies.scribe]]
 modId = "forge"

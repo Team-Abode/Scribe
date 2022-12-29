@@ -1,6 +1,6 @@
-package net.examplemod.fabric;
+package net.teamabode.scribe.fabric;
 
-import net.examplemod.ExampleMod;
+import net.teamabode.scribe.ExampleMod;
 import net.fabricmc.api.ModInitializer;
 
 public class ExampleModFabric implements ModInitializer {
