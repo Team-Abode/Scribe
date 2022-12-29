@@ -1,37 +1,32 @@
 {
-    "schemaVersion": 1,
-    "id": "scribe",
-    "version": "${version}",
-    "name": "Scribe",
-    "description": "A library designed for multi-loader projects, mainly used by Team Abode.",
-    "authors": [
-      "Team Abode",
-      "ExDrill",
-      "OuterCloudStudio"
-    ],
-    "contact": {
-      "homepage": "",
-      "sources": ""
-    },
-    "license": "CC0-1.0",
-    "icon": "assets/scribe/icon.png",
-    "environment": "*",
-    "entrypoints": {
-      "main": [
-        "com.teamabode.scribe.ScribeFabric"
-      ]
-    },
-    "mixins": [
-      "scribe.mixins.json"
-    ],
-    "depends": {
-      "fabricloader": ">=0.14",
-      "fabric": "*",
-      "minecraft": "1.19.x",
-      "java": ">=17"
-    },
-    "suggests": {
-      "another-mod": "*"
-    }
+  "schemaVersion": 1,
+  "id": "examplemod",
+  "version": "${version}",
+  "name": "Scribe",
+  "description": "Library for Team Abode mods",
+  "authors": [
+    "Team Abode",
+    "ExDrill",
+    "OuterCloudStudio"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "",
+  "icon": "assets/scribe/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.examplemod.fabric.ExampleModFabric"
+    ]
+  },
+  "mixins": [
+    "scribe.mixins.json",
+    "scribe-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.2"
   }
-  
+}

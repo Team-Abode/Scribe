@@ -1,28 +1,32 @@
-modLoader="javafml"
-loaderVersion="[43,)"
-license="All rights reserved"
+modLoader = "javafml"
+loaderVersion = "[43,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
 [[mods]]
-modId="scribe"
-version="${file.jarVersion}"
-displayName="Scribe"
-logoFile="icon.png"
-credits='''
+modId = "scribe"
+version = "${version}"
+displayName = "Scribe"
+authors = '''
+Team Abode
 ExDrill
 OuterCloudStudio
 '''
-authors="Team Abode"
-description='''
-A library designed for multi-loader projects, mainly used by Team Abode.
+description = '''
+Library for the Team Abode mods.
 '''
+#logoFile = "icon.png"
+
 [[dependencies.scribe]]
-    modId="forge"
-    mandatory=true
-    versionRange="[43,)"
-    ordering="NONE"
-    side="BOTH"
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "BOTH"
+
 [[dependencies.scribe]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.19.2,1.20)"
-    ordering="NONE"
-    side="BOTH"
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.2,)"
+ordering = "NONE"
+side = "BOTH"
