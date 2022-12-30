@@ -1,7 +1,9 @@
-package net.teamabode.scribe.registry;
+package net.teamabode.scribe.api.platform.fabric.registry;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.teamabode.scribe.api.platform.registry.Registry;
+
 import java.util.function.Supplier;
 
 public class RegistryFabric implements Registry {
