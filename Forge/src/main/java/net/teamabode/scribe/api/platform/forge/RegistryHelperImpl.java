@@ -1,9 +1,9 @@
 package net.teamabode.scribe.api.platform.forge;
 
-import net.teamabode.scribe.api.platform.Registry;
+import net.teamabode.scribe.api.platform.ScribeRegistry;
 
 public class RegistryHelperImpl {
-    public static Registry getRegistry(String modId){
-        return new RegistryForge(modId);
+    public static ScribeRegistry getRegistry(String modId){
+        return new ScribeRegistryForge(modId);
     }
 }
