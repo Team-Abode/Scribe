@@ -4,9 +4,9 @@ loaderVersion = "[43,)"
 license = "Insert License Here"
 
 [[mods]]
-modId = "scribe"
+modId = "scribe_test"
 version = "${version}"
-displayName = "Scribe"
+displayName = "Scribe Test"
 authors = '''
 Team Abode
 ExDrill
@@ -17,16 +17,23 @@ Library for the Team Abode mods.
 '''
 logoFile = "icon.png"
 
-[[dependencies.scribe]]
+[[dependencies.scribe_test]]
 modId = "forge"
 mandatory = true
 versionRange = "[43,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.scribe]]
+[[dependencies.scribe_test]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.19.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.scribe_test]]
+modId = "scribe"
+mandatory = true
+version = "1.0.0"
 ordering = "NONE"
 side = "BOTH"

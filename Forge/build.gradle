@@ -14,8 +14,8 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
-        mixinConfig "scribe-common.mixins.json"
-        mixinConfig "scribe.mixins.json"
+        mixinConfig "scribe_test-common.mixins.json"
+        mixinConfig "scribe_test.mixins.json"
     }
 }
 
@@ -35,6 +35,8 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+
+    modApi "net.teamabode:scribe-forge:1.0.0"
 }
 
 processResources {

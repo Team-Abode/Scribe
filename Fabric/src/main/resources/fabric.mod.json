@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "scribe",
+  "id": "scribe_test",
   "version": "${version}",
   "name": "Scribe",
   "description": "Library for Team Abode mods",
@@ -14,16 +14,16 @@
     "sources": ""
   },
   "license": "",
-  "icon": "assets/scribe/icon.png",
+  "icon": "assets/scribe_test/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.teamabode.scribe.ScribeFabric"
+      "net.teamabode.scribe_test.ScribeTestFabric"
     ]
   },
   "mixins": [
-    "scribe.mixins.json",
-    "scribe-common.mixins.json"
+    "scribe_test.mixins.json",
+    "scribe_test-common.mixins.json"
   ],
   "depends": {
     "fabric": "*",

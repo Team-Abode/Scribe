@@ -3,7 +3,7 @@ architectury {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/scribe.accesswidener")
+    accessWidenerPath = file("src/main/resources/scribe_test.accesswidener")
 }
 
 dependencies {
@@ -12,6 +12,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     // Remove the next line if you don't want to depend on the API
     //modApi "dev.architectury:architectury:${rootProject.architectury_version}"
+    modApi "net.teamabode:scribe:1.0.0"
 }
 
 publishing {
