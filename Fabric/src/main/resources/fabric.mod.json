@@ -18,7 +18,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.teamabode.scribe.fabric.ExampleModFabric"
+      "net.teamabode.scribe.core.ScribeFabric"
     ]
   },
   "mixins": [

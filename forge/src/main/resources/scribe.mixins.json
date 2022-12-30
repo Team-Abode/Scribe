@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.examplemod.mixin.forge",
+  "package": "net.teamabode.scribe.core.mixin.forge",
   "compatibilityLevel": "JAVA_17",
   "client": [
   ],
