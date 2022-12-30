@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "scribe",
   "version": "${version}",
   "name": "Scribe",
   "description": "Library for Team Abode mods",
