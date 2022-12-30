@@ -30,10 +30,3 @@ mandatory = true
 versionRange = "[1.19.2,)"
 ordering = "NONE"
 side = "BOTH"
-
-[[dependencies.scribe_test]]
-modId = "scribe"
-mandatory = true
-version = "1.0.0"
-ordering = "NONE"
-side = "BOTH"

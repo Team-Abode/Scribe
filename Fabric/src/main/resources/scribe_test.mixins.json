@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.teamabode.scribe_test.core.mixin.fabric",
+  "package": "net.teamabode.scribe_test.forge.mixin.fabric",
   "compatibilityLevel": "JAVA_17",
   "client": [
   ],

@@ -1,8 +1,8 @@
 package net.teamabode.scribe_test;
 
 import net.minecraft.world.item.Item;
-import net.teamabode.scribe.api.platform.registry.Registry;
-import net.teamabode.scribe.api.platform.registry.RegistryHelper;
+import net.teamabode.scribe.api.platform.Registry;
+import net.teamabode.scribe.api.platform.RegistryHelper;
 
 import java.util.function.Supplier;
 
