@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform.registry;
+package net.teamabode.scribe.api.platform;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 

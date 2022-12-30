@@ -1,8 +1,8 @@
-package net.teamabode.scribe.api.platform.fabric.registry;
+package net.teamabode.scribe.api.platform.fabric;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.teamabode.scribe.api.platform.registry.Registry;
+import net.teamabode.scribe.api.platform.Registry;
 
 import java.util.function.Supplier;
 

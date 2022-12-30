@@ -1,10 +1,10 @@
-package net.teamabode.scribe.api.platform.forge.registry;
+package net.teamabode.scribe.api.platform.forge;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.teamabode.scribe.api.platform.registry.Registry;
+import net.teamabode.scribe.api.platform.Registry;
 
 import java.util.function.Supplier;
 
