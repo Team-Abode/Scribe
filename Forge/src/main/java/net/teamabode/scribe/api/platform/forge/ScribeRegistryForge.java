@@ -1,7 +1,10 @@
 package net.teamabode.scribe.api.platform.forge;
 
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
@@ -19,17 +22,20 @@ public class ScribeRegistryForge implements ScribeRegistry {
     private final String modId;
     private final DeferredRegister<Item> itemRegistry;
     private final DeferredRegister<Block> blockRegistry;
+    private final DeferredRegister<EntityType<?>> entityTypeRegistry;
 
     public ScribeRegistryForge(String modId){
         this.modId = modId;
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
         // Items
         itemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, modId);
         itemRegistry.register(bus);
         // Blocks
         blockRegistry = DeferredRegister.create(ForgeRegistries.BLOCKS, modId);
         blockRegistry.register(bus);
+        // Entity Types
+        entityTypeRegistry = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, modId);
+        entityTypeRegistry.register(bus);
     }
 
     @Override
@@ -44,6 +50,19 @@ public class ScribeRegistryForge implements ScribeRegistry {
 
     @Override
     public <T extends Block> Supplier<T> registerBlock(String identifier, Supplier<T> blockSupplier) {
+        itemRegistry.register(identifier, () -> new BlockItem(blockSupplier.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
         return blockRegistry.register(identifier, blockSupplier);
+    }
+
+    @Override
+    public <T extends Block> Supplier<T> registerBlockWithItem(String identifier, Supplier<T> blockSupplier, CreativeModeTab tab) {
+        Supplier<T> block = blockRegistry.register(identifier, blockSupplier);
+        itemRegistry.register(identifier, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+        return block;
+    }
+
+    @Override
+    public <E extends Entity, T extends EntityType<E>> Supplier<T> registerEntityType(String identifier, Supplier<T> entityTypeSupplier) {
+        return entityTypeRegistry.register(identifier, entityTypeSupplier);
     }
 }

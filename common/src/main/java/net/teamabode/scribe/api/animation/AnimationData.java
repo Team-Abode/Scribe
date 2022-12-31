@@ -2,7 +2,6 @@ package net.teamabode.scribe.api.animation;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
@@ -10,11 +9,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 public class AnimationData {
 
-    private static final Map<ResourceLocation, AnimationData> ANIMATIONS = new HashMap<>();
+    public static final Map<ResourceLocation, AnimationData> ANIMATIONS = new HashMap<>();
     private final JsonElement data;
 
     public AnimationData(JsonElement data) {

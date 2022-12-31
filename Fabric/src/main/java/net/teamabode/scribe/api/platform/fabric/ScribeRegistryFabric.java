@@ -2,8 +2,8 @@ package net.teamabode.scribe.api.platform.fabric;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
@@ -21,8 +21,8 @@ public class ScribeRegistryFabric implements ScribeRegistry {
 
     @Override
     public <T extends Item> Supplier<T> registerItem(String identifier, Supplier<T> itemSupplier) {
-        Registry.register(Registry.ITEM, new ResourceLocation(modId, identifier), itemSupplier.get());
-        return itemSupplier;
+        T item = Registry.register(Registry.ITEM, new ResourceLocation(modId, identifier), itemSupplier.get());
+        return () -> item;
     }
 
     @Override
@@ -32,7 +32,20 @@ public class ScribeRegistryFabric implements ScribeRegistry {
 
     @Override
     public <T extends Block> Supplier<T> registerBlock(String identifier, Supplier<T> blockSupplier) {
-        Registry.register(Registry.BLOCK, new ResourceLocation(modId, identifier), blockSupplier.get());
-        return blockSupplier;
+        T block = Registry.register(Registry.BLOCK, new ResourceLocation(modId, identifier), blockSupplier.get());
+        return () -> block;
+    }
+
+    @Override
+    public <T extends Block> Supplier<T> registerBlockWithItem(String identifier, Supplier<T> blockSupplier, CreativeModeTab tab) {
+        Supplier<T> block = registerBlock(identifier, blockSupplier);
+        registerItem(identifier, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+        return block;
+    }
+
+    @Override
+    public <E extends Entity, T extends EntityType<E>> Supplier<T> registerEntityType(String identifier, Supplier<T> entityTypeSupplier) {
+        T entityType = Registry.register(Registry.ENTITY_TYPE, new ResourceLocation(modId, identifier), entityTypeSupplier.get());
+        return () -> entityType;
     }
 }

@@ -12,7 +12,6 @@ public class ScribeReloadableResourceListener implements ResourceManagerReloadLi
     @Override
     public void onResourceManagerReload(ResourceManager resourceManager) {
         Stream<PackResources> stream = resourceManager.listPacks();
-
         stream.forEach((packResources) -> {
             try {
                 Scribe.LOGGER.info("Reading pack... " + packResources.getName() + " " + packResources.getNamespaces(PackType.CLIENT_RESOURCES) + " " + packResources.getNamespaces(PackType.SERVER_DATA));
