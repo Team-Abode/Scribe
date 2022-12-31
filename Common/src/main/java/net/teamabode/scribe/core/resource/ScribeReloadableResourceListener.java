@@ -19,7 +19,6 @@ public class ScribeReloadableResourceListener implements ResourceManagerReloadLi
             } catch (RuntimeException exception) {
                 Scribe.LOGGER.warn("An error occurred on the scribe reloadable resource listener: {}", packResources.getName(), exception);
             }
-
         });
     }
 }

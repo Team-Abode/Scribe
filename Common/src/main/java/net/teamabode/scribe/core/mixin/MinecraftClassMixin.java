@@ -1,4 +1,4 @@
-package net.teamabode.scribe.mixins;
+package net.teamabode.scribe.core.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
@@ -17,6 +17,6 @@ public class MinecraftClassMixin {
         Scribe.LOGGER.info("Got resource manager:");
         Scribe.LOGGER.info(String.valueOf(reloadableResourceManager));
 
-        reloadableResourceManager.registerReloadListener(Scribe.reloadableResourceListener);
+        reloadableResourceManager.registerReloadListener(Scribe.RELOAD_LISTENER);
     }
 }

@@ -8,9 +8,8 @@ public class Scribe {
     public static final String MOD_ID = "scribe";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public static final ScribeReloadableResourceListener reloadableResourceListener = new ScribeReloadableResourceListener();
+    public static final ScribeReloadableResourceListener RELOAD_LISTENER = new ScribeReloadableResourceListener();
 
     public static void initialize() {
-
     }
 }
