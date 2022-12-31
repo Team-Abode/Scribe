@@ -15,6 +15,7 @@ public class Scribe {
     public static void initialize() {
         ResourceManager resourceManager = Minecraft.getInstance().getResourceManager();
         if (resourceManager instanceof ReloadableResourceManager reloadableResourceManager) {
+            LOGGER.info("Registering animation loader");
             reloadableResourceManager.registerReloadListener(ANIMATION_LOADER);
         }
     }

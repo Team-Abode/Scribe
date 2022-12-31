@@ -14,10 +14,15 @@ import java.util.Set;
 
 public class AnimationData {
 
+    private static final Map<ResourceLocation, AnimationData> ANIMATIONS = new HashMap<>();
     private final JsonElement data;
 
     public AnimationData(JsonElement data) {
         this.data = data;
+    }
+
+    public static AnimationData getAnimationData(ResourceLocation resourceLocation) {
+        return ANIMATIONS.get(resourceLocation);
     }
 
     public float getLength() {
