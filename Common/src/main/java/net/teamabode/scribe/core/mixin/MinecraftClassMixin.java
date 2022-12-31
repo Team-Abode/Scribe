@@ -13,10 +13,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MinecraftClassMixin {
     @Inject(method = "<init>", at = @At("TAIL"))
     private void constructor(CallbackInfo callbackInfo){
-        ReloadableResourceManager resourceManager = (ReloadableResourceManager)((Minecraft)(Object)this).getResourceManager();
+        Minecraft minecraft = ((Minecraft)(Object)this);
+
+        ReloadableResourceManager resourceManager = (ReloadableResourceManager)minecraft.getResourceManager();
 
         Scribe.resourceListener = new ScribeResourceListener();
 
         resourceManager.registerReloadListener(Scribe.resourceListener);
+
+        minecraft.reloadResourcePacks();
     }
 }
