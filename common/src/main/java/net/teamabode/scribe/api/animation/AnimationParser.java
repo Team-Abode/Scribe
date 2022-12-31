@@ -11,7 +11,7 @@ import net.teamabode.scribe.core.Scribe;
 public class AnimationParser {
 
     public static AnimationDefinition getAnimation(ResourceLocation resourceLocation) {
-        AnimationData animationData = AnimationData.getAnimationData(resourceLocation);
+        AnimationData animationData = Scribe.ANIMATION_LOADER.getAnimationData(resourceLocation);
         AnimationDefinition.Builder builder = AnimationDefinition.Builder.withLength(animationData.getLength());
         if (animationData.isLooping()) builder.looping();
 

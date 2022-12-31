@@ -1,0 +1,22 @@
+{
+  "length": 1.0,
+  "looping": true,
+  "bones": {
+    "rightLeg": {
+      "rotation": {
+        "0.0": {
+          "interpolation": "linear",
+          "value": [ 0, 0, 0 ]
+        },
+        "0.5": {
+          "interpolation": "linear",
+          "value": [ 0, 10, 0 ]
+        },
+        "1.0": {
+          "interpolation": "linear",
+          "value": [ 0, 0, 0 ]
+        }
+      }
+    }
+  }
+}
