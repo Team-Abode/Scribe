@@ -1,36 +1,24 @@
 {
-  "length": 1.0,
-  "looping": true,
+  "length": 3.0,
+  "looping": false,
   "bones": {
-    "rightLeg": {
+    "head": {
       "rotation": {
         "0.0": {
           "interpolation": "linear",
-          "value": [ 0, 0, 0 ]
+          "value": [ 0.0, 0.0, 0.0 ]
+        },
+        "0.0833": {
+          "interpolation": "linear",
+          "value": [ -60.0, 0.0, 0.0 ]
+        },
+        "0.4167": {
+          "interpolation": "linear",
+          "value": [ -60.0, 0.0, 0.0 ]
         },
         "0.5": {
           "interpolation": "linear",
-          "value": [ 0, 10, 0 ]
-        },
-        "1.0": {
-          "interpolation": "linear",
-          "value": [ 0, 0, 0 ]
-        }
-      }
-    },
-    "rightArm": {
-      "rotation": {
-        "0.0": {
-          "interpolation": "linear",
-          "value": [ 0, 0, 0 ]
-        },
-        "0.5": {
-          "interpolation": "linear",
-          "value": [ 0, 10, 0 ]
-        },
-        "1.0": {
-          "interpolation": "linear",
-          "value": [ 0, 0, 0 ]
+          "value": [ 0.0, 0.0, 0.0 ]
         }
       }
     }

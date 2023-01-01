@@ -11,7 +11,9 @@ import net.teamabode.scribe.core.Scribe;
 public class AnimationParser {
 
     public static AnimationDefinition getAnimation(ResourceLocation resourceLocation) {
-        AnimationData animationData = AnimationData.getAnimationData(resourceLocation);
+        AnimationData animationData = AnimationData.ANIMATIONS.get(resourceLocation);
+        if (animationData == null) throw new AssertionError("Animation is null!");
+
         AnimationDefinition.Builder builder = AnimationDefinition.Builder.withLength(animationData.getLength());
         if (animationData.isLooping()) builder.looping();
 
@@ -42,8 +44,8 @@ public class AnimationParser {
                 }
                 for (int i = 0; i < keyframes.length; i++) {
                     keyframes[i] = new Keyframe(Float.parseFloat(timestamp), vector3f, animationData.getInterpolationType(bone, target, timestamp));
+                    Scribe.LOGGER.info(String.valueOf(keyframes.length));
                 }
-
                 if (selectedTarget != null) {
                     builder.addAnimation(bone, new AnimationChannel(selectedTarget, keyframes));
                 }
