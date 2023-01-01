@@ -3,7 +3,7 @@
   "package": "net.teamabode.scribe.core.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "MinecraftMixin"
+    "ResourceLoadStateTrackerMixin"
   ],
   "mixins": [
   ],
