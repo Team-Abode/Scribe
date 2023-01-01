@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform.fabric;
+package net.teamabode.scribe.core.api.platform.fabric;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -8,7 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
-import net.teamabode.scribe.api.platform.ScribeRegistry;
+import net.teamabode.scribe.core.api.platform.ScribeRegistry;
 
 import java.util.function.Supplier;
 

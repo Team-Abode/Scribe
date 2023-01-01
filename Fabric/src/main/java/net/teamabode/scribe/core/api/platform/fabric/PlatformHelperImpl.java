@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform.fabric;
+package net.teamabode.scribe.core.api.platform.fabric;
 
 import net.fabricmc.loader.api.FabricLoader;
 

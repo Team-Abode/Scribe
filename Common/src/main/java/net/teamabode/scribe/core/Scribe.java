@@ -4,9 +4,9 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
-import net.teamabode.scribe.api.animation.AnimationManager;
-import net.teamabode.scribe.api.platform.RegistryHelper;
-import net.teamabode.scribe.api.platform.ScribeRegistry;
+import net.teamabode.scribe.core.api.animation.AnimationManager;
+import net.teamabode.scribe.core.api.platform.RegistryHelper;
+import net.teamabode.scribe.core.api.platform.ScribeRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

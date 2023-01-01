@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform;
+package net.teamabode.scribe.core.api.platform;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 

@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform.forge;
+package net.teamabode.scribe.core.api.platform.forge;
 
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;

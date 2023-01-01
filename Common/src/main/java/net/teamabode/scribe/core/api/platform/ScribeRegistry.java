@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform;
+package net.teamabode.scribe.core.api.platform;
 
 import net.minecraft.world.entity.*;
 import net.minecraft.world.item.BlockItem;

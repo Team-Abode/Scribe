@@ -4,7 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.ResourceLoadStateTracker;
 import net.minecraft.server.packs.PackResources;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
-import net.teamabode.scribe.api.animation.AnimationManager;
+import net.teamabode.scribe.core.api.animation.AnimationManager;
 import net.teamabode.scribe.core.Scribe;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

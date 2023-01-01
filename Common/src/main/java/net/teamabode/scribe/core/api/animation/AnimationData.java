@@ -1,10 +1,9 @@
-package net.teamabode.scribe.api.animation;
+package net.teamabode.scribe.core.api.animation;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -12,15 +11,10 @@ import java.util.Map;
 
 public class AnimationData {
 
-    public static final Map<ResourceLocation, AnimationData> ANIMATIONS = new HashMap<>();
     private final JsonElement data;
 
     public AnimationData(JsonElement data) {
         this.data = data;
-    }
-
-    public static AnimationData getAnimationData(ResourceLocation resourceLocation) {
-        return ANIMATIONS.get(resourceLocation);
     }
 
     public float getLength() {
@@ -37,12 +31,11 @@ public class AnimationData {
         return false;
     }
 
-    @Nullable
     public Iterator<Map.Entry<String, JsonElement>> getBones() {
         if (data.getAsJsonObject().has("bones")) {
             return data.getAsJsonObject().get("bones").getAsJsonObject().entrySet().iterator();
         }
-        return null;
+        throw new AssertionError("Bones not found in animation");
     }
 
     public Iterator<Map.Entry<String, JsonElement>> getAnimationTargets(String bone) {

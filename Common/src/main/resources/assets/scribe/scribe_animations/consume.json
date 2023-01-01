@@ -1,0 +1,186 @@
+{
+  "length": 0.5,
+  "looping": false,
+  "bones": {
+    "head": {
+      "rotation": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [-60, 0, 0]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [-60, 0, 0]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      }
+    },
+    "tongue": {
+      "rotation": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [-22.5, 0, 0]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [-22.5, 0, 0]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      },
+      "scale": {
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [1, 1, 1]
+        },
+        "0.1667": {
+          "interpolation": "catmullrom",
+          "value": [0.5, 1, 5]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [1, 1, 1]
+        }
+      }
+    },
+    "body": {
+      "rotation": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [22.5, 0, 0]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [22.5, 0, 0]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      },
+      "position": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [0, 2, -2]
+        },
+        "0.25": {
+          "interpolation": "catmullrom",
+          "value": [0, 2, -4]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [0, 2, -2]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      }
+    },
+    "left_arm": {
+      "rotation": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [0, 45, 0]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [0, 45, 0]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      },
+      "position": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [0, 10, -9]
+        },
+        "0.25": {
+          "interpolation": "catmullrom",
+          "value": [0, 6.5, -6]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [0, 7, -7]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      }
+    },
+    "right_arm": {
+      "rotation": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [0, -45, 0]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [0, -45, 0]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      },
+      "position": {
+        "0.0": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        },
+        "0.0833": {
+          "interpolation": "catmullrom",
+          "value": [0, 10, -9]
+        },
+        "0.25": {
+          "interpolation": "catmullrom",
+          "value": [0, 6.5, -6]
+        },
+        "0.4167": {
+          "interpolation": "catmullrom",
+          "value": [0, 7, -7]
+        },
+        "0.5": {
+          "interpolation": "catmullrom",
+          "value": [0, 0, 0]
+        }
+      }
+    }
+  }
+}

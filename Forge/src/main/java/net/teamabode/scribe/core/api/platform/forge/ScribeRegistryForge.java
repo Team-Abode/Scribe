@@ -1,7 +1,6 @@
-package net.teamabode.scribe.api.platform.forge;
+package net.teamabode.scribe.core.api.platform.forge;
 
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.BlockItem;
@@ -14,7 +13,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.teamabode.scribe.api.platform.ScribeRegistry;
+import net.teamabode.scribe.core.api.platform.ScribeRegistry;
 
 import java.util.function.Supplier;
 
