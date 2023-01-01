@@ -44,7 +44,6 @@ public class AnimationParser {
                 }
                 for (int i = 0; i < keyframes.length; i++) {
                     keyframes[i] = new Keyframe(Float.parseFloat(timestamp), vector3f, animationData.getInterpolationType(bone, target, timestamp));
-                    Scribe.LOGGER.info(String.valueOf(keyframes.length));
                 }
                 if (selectedTarget != null) {
                     builder.addAnimation(bone, new AnimationChannel(selectedTarget, keyframes));
