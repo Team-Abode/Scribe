@@ -16,15 +16,46 @@
                 description: 'Export a selection of animations as Scribe Animations',
                 icon: 'movie',
                 click: function() {
-                    const scribe_animation = compileScribeAnimation(Animator.animations[0])
+                    const form = {}
 
-                    Blockbench.export({
-                        resource_id: 'animation',
-                        type: 'JSON Animation',
-                        extensions: ['json'],
-                        name: (Animator.animations[0].name),
-                        content: autoStringify(scribe_animation),
+                    for (const animation of Animator.animations) {
+                        form[animation.name] = {
+                            label: animation.name,
+                            type: "checkbox",
+                            value: true
+                        }
+                    }
+
+                    const formDialog = new Dialog({
+                        id: "scribe_animation_export",
+                        title: "dialog.animation_export.title",
+                        form,
+                        onConfirm(formResult) {
+                            formDialog.hide()
+
+                            let animationExportIndex = 0
+
+                            for (let selectedAnimation in form) {
+                                const scribe_animation = compileScribeAnimation(Animator.animations[animationExportIndex])
+
+                                animationExportIndex++
+
+                                selectedAnimation = form[selectedAnimation]
+
+                                if (!selectedAnimation.value) continue
+
+                                Blockbench.export({
+                                    resource_id: 'animation',
+                                    type: 'JSON Animation',
+                                    extensions: ['json'],
+                                    name: (selectedAnimation.label || "scribe_animation"),
+                                    content: autoStringify(scribe_animation),
+                                })
+                            }
+                        }
                     })
+
+                    formDialog.show()
                 }
             })
             MenuBar.addAction(exportScribeAnimations, 'animation')
@@ -59,6 +90,10 @@
 
                 if (animator.scale.length > 0) {
                     currentBone.scale = keyframeParser(animator.scale)
+                }
+
+                if (Object.keys(currentBone).length === 0) {
+                    delete scribe_animation.bones[animator.group.name]
                 }
             }
         }
