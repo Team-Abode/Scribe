@@ -21,7 +21,7 @@ public class AnimationParser {
 
     public static AnimationDefinition createAnimation(ResourceLocation resourceLocation) {
         AnimationData jsonData = AnimationManager.ANIMATIONS.get(resourceLocation);
-        if (jsonData == null) throw new AssertionError();
+        if (jsonData == null) return nullAnimation();
 
         AnimationDefinition.Builder builder = AnimationDefinition.Builder.withLength(jsonData.getLength());
 
@@ -46,6 +46,10 @@ public class AnimationParser {
         }
         if (jsonData.isLooping()) builder.looping();
         return builder.build();
+    }
+
+    private static AnimationDefinition nullAnimation() {
+        return AnimationDefinition.Builder.withLength(0.0F).build();
     }
 
     private static AnimationChannel.Target getAnimationTarget(String target) {

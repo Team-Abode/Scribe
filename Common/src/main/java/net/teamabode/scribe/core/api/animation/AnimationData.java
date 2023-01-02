@@ -21,7 +21,7 @@ public class AnimationData {
         if (data.getAsJsonObject().has("length")) {
             return data.getAsJsonObject().get("length").getAsFloat();
         }
-        throw new AssertionError("A specified length is required!");
+        throw new AssertionError("Animation is missing a specified length");
     }
 
     public boolean isLooping() {
@@ -35,14 +35,14 @@ public class AnimationData {
         if (data.getAsJsonObject().has("bones")) {
             return data.getAsJsonObject().get("bones").getAsJsonObject().entrySet().iterator();
         }
-        throw new AssertionError("Bones not found in animation");
+        throw new AssertionError("Bones not specified in animation");
     }
 
     public Iterator<Map.Entry<String, JsonElement>> getAnimationTargets(String bone) {
         if (data.getAsJsonObject().get("bones").getAsJsonObject().has(bone)) {
             return data.getAsJsonObject().get("bones").getAsJsonObject().get(bone).getAsJsonObject().entrySet().iterator();
         }
-        throw new AssertionError("A specified animation target must be used!");
+        throw new AssertionError("Invalid or missing animation target on bone \"" + bone + "\"");
     }
 
     public Iterator<Map.Entry<String, JsonElement>> getTimestamps(String bone, String animTarget) {
@@ -55,9 +55,17 @@ public class AnimationData {
     public AnimationChannel.Interpolation getInterpolationType(String bone, String animTarget, String timestamp) {
         if (data.getAsJsonObject().get("bones").getAsJsonObject().get(bone).getAsJsonObject().get(animTarget).getAsJsonObject().get(timestamp).getAsJsonObject().has("interpolation")) {
             String interpolationType = data.getAsJsonObject().get("bones").getAsJsonObject().get(bone).getAsJsonObject().get(animTarget).getAsJsonObject().get(timestamp).getAsJsonObject().get("interpolation").getAsString();
-            return interpolationType.equals("linear") ? AnimationChannel.Interpolations.LINEAR : AnimationChannel.Interpolations.CATMULLROM;
+            switch (interpolationType) {
+                case "linear" -> {
+                    return AnimationChannel.Interpolations.LINEAR;
+                }
+                case "catmullrom" -> {
+                    return AnimationChannel.Interpolations.CATMULLROM;
+                }
+                default -> throw new AssertionError("Invalid interpolation type \"" + interpolationType + "\"");
+            }
         }
-        throw new AssertionError();
+        throw new AssertionError("No interpolation type specified on timestamp \"" + timestamp + "\" on \"" + animTarget + "\" for bone \"" + bone + "\"");
     }
 
     public float[] getAnimationValue(String bone, String animTarget, String timestamp) {
