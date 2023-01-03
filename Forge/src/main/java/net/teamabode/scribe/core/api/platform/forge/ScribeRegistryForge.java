@@ -19,13 +19,14 @@ import java.util.function.Supplier;
 
 public class ScribeRegistryForge implements ScribeRegistry {
     private final String modId;
+    private final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
     private final DeferredRegister<Item> itemRegistry;
     private final DeferredRegister<Block> blockRegistry;
     private final DeferredRegister<EntityType<?>> entityTypeRegistry;
 
     public ScribeRegistryForge(String modId){
         this.modId = modId;
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         // Items
         itemRegistry = DeferredRegister.create(ForgeRegistries.ITEMS, modId);
         itemRegistry.register(bus);

@@ -124,12 +124,12 @@
             }
 
 
-            parsedKeyframes[keyframe.time.toFixed(1)] = {
+            parsedKeyframes[parseFloat(keyframe.time.toString())] = {
                 interpolation: keyframe.interpolation,
                 value: [
-                    parseInt(keyframeDataPoint.x),
-                    parseInt(keyframeDataPoint.y),
-                    parseInt(keyframeDataPoint.z)
+                    parseFloat(keyframeDataPoint.x.toString()),
+                    parseFloat(keyframeDataPoint.y.toString()),
+                    parseFloat(keyframeDataPoint.z.toString())
                 ]
             }
 

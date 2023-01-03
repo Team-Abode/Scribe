@@ -5,6 +5,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
+import net.teamabode.scribe.core.Scribe;
+import net.teamabode.scribe.core.api.platform.PlatformHelper;
 
 import java.io.Reader;
 import java.util.HashMap;
@@ -33,5 +35,6 @@ public class AnimationManager extends SimplePreparableReloadListener<Map<Resourc
     protected void apply(Map<ResourceLocation, AnimationData> object, ResourceManager resourceManager, ProfilerFiller profilerFiller) {
         ANIMATIONS.clear();
         ANIMATIONS.putAll(object);
+        if (PlatformHelper.isDevEnvironment()) ANIMATIONS.forEach((resourceLocation, animationData) -> Scribe.LOGGER.info("Adding " + resourceLocation.toString()));
     }
 }

@@ -2,9 +2,6 @@ package net.teamabode.scribe.core.api.platform;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 
-
-
-
 public class RegistryHelper {
 
     @ExpectPlatform

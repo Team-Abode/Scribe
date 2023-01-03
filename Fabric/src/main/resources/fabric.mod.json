@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "net.teamabode.scribe.core.fabric.ScribeFabric"
+    ],
+    "client": [
+      "net.teamabode.scribe.core.fabric.ScribeFabricClient"
     ]
   },
   "mixins": [
