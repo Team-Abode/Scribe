@@ -15,8 +15,8 @@ import java.util.function.Supplier;
 
 public class EntityHelperImpl {
 
-    public static void registerEntityAttributes(Supplier<? extends EntityType<? extends LivingEntity>> entityTypeSupplier, AttributeSupplier.Builder map) {
-        FabricDefaultAttributeRegistry.register(entityTypeSupplier.get(), map);
+    public static void registerEntityAttributes(Supplier<? extends EntityType<? extends LivingEntity>> entityTypeSupplier, Supplier<AttributeSupplier.Builder> map) {
+        FabricDefaultAttributeRegistry.register(entityTypeSupplier.get(), map.get());
     }
 
     public static void registerLayerDefinition(ModelLayerLocation modelLayerLocation, Supplier<LayerDefinition> layerDefinitionSupplier) {

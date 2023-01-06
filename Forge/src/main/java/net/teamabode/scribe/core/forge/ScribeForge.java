@@ -12,11 +12,10 @@ public class ScribeForge {
     public ScribeForge() {
         Scribe.initialize();
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
         bus.addListener(this::addEntityAttributes);
     }
 
     private void addEntityAttributes(final EntityAttributeCreationEvent event) {
-        EntityHelperImpl.ATTRIBUTE_MAP.forEach((supplier, builder) -> event.put(supplier.get(), builder.build()));
+        EntityHelperImpl.ATTRIBUTE_MAP.forEach((supplier, builder) -> event.put(supplier.get(), builder.get().build()));
     }
 }

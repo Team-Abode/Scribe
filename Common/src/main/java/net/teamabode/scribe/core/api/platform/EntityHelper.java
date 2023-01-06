@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 public class EntityHelper {
 
     @ExpectPlatform
-    public static void registerEntityAttributes(Supplier<? extends EntityType<? extends LivingEntity>> entityTypeSupplier, AttributeSupplier.Builder map) {
+    public static void registerEntityAttributes(Supplier<? extends EntityType<? extends LivingEntity>> entityTypeSupplier, Supplier<AttributeSupplier.Builder> map) {
         throw new AssertionError();
     }
 

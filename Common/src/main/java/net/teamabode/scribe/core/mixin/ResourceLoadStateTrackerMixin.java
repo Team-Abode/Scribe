@@ -18,11 +18,10 @@ public abstract class ResourceLoadStateTrackerMixin {
 
     @Inject(method = "startReload", at = @At("HEAD"))
     private void constructor(ResourceLoadStateTracker.ReloadReason reloadReason, List<PackResources> list, CallbackInfo callbackInfo) {
-        if(reloadReason == ResourceLoadStateTracker.ReloadReason.INITIAL) {
+        if (reloadReason == ResourceLoadStateTracker.ReloadReason.INITIAL) {
             Minecraft minecraft = Minecraft.getInstance();
             ReloadableResourceManager resourceManager = (ReloadableResourceManager) minecraft.getResourceManager();
-            Scribe.animationManager = new AnimationManager();
-            resourceManager.registerReloadListener(Scribe.animationManager);
+            resourceManager.registerReloadListener(Scribe.ANIMATION_MANAGER);
         }
     }
 }
