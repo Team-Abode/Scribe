@@ -1,6 +1,6 @@
-package net.teamabode.scribe.core;
+package net.teamabode.scribe;
 
-import net.teamabode.scribe.core.api.animation.AnimationManager;
+import net.teamabode.scribe.animation.AnimationManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,11 +1,10 @@
-package net.teamabode.scribe.core.mixin;
+package net.teamabode.scribe.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.ResourceLoadStateTracker;
 import net.minecraft.server.packs.PackResources;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
-import net.teamabode.scribe.core.api.animation.AnimationManager;
-import net.teamabode.scribe.core.Scribe;
+import net.teamabode.scribe.Scribe;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

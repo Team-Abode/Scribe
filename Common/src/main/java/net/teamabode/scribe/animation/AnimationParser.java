@@ -1,4 +1,4 @@
-package net.teamabode.scribe.core.api.animation;
+package net.teamabode.scribe.animation;
 
 import com.google.gson.JsonElement;
 import com.mojang.math.Vector3f;
@@ -7,7 +7,7 @@ import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 import net.minecraft.resources.ResourceLocation;
-import net.teamabode.scribe.core.Scribe;
+import net.teamabode.scribe.Scribe;
 
 import java.util.Iterator;
 import java.util.Map;

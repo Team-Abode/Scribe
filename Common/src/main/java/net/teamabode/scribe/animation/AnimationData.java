@@ -1,11 +1,9 @@
-package net.teamabode.scribe.core.api.animation;
+package net.teamabode.scribe.animation;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import net.minecraft.client.animation.AnimationChannel;
-import net.minecraft.resources.ResourceLocation;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 

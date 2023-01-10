@@ -1,6 +1,7 @@
-package net.teamabode.scribe.core.api.platform;
+package net.teamabode.scribe.api.platform;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.teamabode.scribe.api.platform.ScribeRegistry;
 
 public class RegistryHelper {
 
