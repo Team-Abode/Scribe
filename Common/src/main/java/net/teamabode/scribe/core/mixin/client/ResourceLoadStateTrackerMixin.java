@@ -1,4 +1,4 @@
-package net.teamabode.scribe.core.mixin;
+package net.teamabode.scribe.core.mixin.client;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.ResourceLoadStateTracker;
