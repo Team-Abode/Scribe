@@ -1,4 +1,4 @@
-package net.teamabode.scribe.animation;
+package net.teamabode.scribe.core.api.animation;
 
 import com.google.gson.JsonElement;
 import com.mojang.math.Vector3f;
@@ -7,7 +7,7 @@ import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 import net.minecraft.resources.ResourceLocation;
-import net.teamabode.scribe.Scribe;
+import net.teamabode.scribe.core.Scribe;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -20,7 +20,7 @@ public class AnimationParser {
             "scale", AnimationChannel.Targets.SCALE
     );
 
-    public static AnimationDefinition createAnimation(ResourceLocation resourceLocation) {
+    protected static AnimationDefinition createAnimation(ResourceLocation resourceLocation) {
         AnimationData jsonData = AnimationManager.ANIMATIONS.get(resourceLocation);
         if (jsonData == null) return nullAnimation(resourceLocation);
 

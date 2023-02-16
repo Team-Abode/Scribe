@@ -1,4 +1,4 @@
-package net.teamabode.scribe.animation;
+package net.teamabode.scribe.core.api.animation;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

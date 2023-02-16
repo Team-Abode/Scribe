@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform;
+package net.teamabode.scribe.core.api.registry;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.model.geom.ModelLayerLocation;

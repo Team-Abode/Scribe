@@ -1,4 +1,4 @@
-package net.teamabode.scribe.api.platform.forge;
+package net.teamabode.scribe.core.api.registry.forge;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -17,7 +17,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.teamabode.scribe.api.platform.ScribeRegistry;
+import net.teamabode.scribe.core.api.registry.ScribeRegistry;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
