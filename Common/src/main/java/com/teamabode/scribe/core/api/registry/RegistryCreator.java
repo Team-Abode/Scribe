@@ -2,7 +2,7 @@ package com.teamabode.scribe.core.api.registry;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 
-public class RegistryHelper {
+public class RegistryCreator {
 
     @ExpectPlatform
     public static ScribeRegistry getRegistry(String modId) {

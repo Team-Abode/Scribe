@@ -1,10 +1,10 @@
 package com.teamabode.scribe.core.api.registry;
 
-import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 
 public interface ScribeRegistry {
+
     Supplier<Item> registerItem(String identifier, Supplier<Item> itemSupplier);
 
     Supplier<SpawnEggItem> registerSpawnEgg(String mobName, EntityType<Mob> entityType, int baseColor, int overlayColor);

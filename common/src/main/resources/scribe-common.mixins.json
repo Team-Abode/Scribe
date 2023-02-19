@@ -1,12 +1,12 @@
 {
   "required": true,
-  "package": "net.teamabode.scribe.core.mixin",
+  "package": "com.teamabode.scribe.core.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "com.teamabode.scribe.core.mixin.client.ResourceLoadStateTrackerMixin"
+    "client.ResourceLoadStateTrackerMixin"
   ],
   "mixins": [
-    "com.teamabode.scribe.core.mixin.LightningBoltMixin"
+    "LightningBoltMixin"
   ],
   "injectors": {
     "defaultRequire": 1
