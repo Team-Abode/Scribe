@@ -10,6 +10,5 @@ public class Scribe {
     public static final AnimationManager ANIMATION_MANAGER = new AnimationManager();
 
     public static void initialize() {
-
     }
 }
