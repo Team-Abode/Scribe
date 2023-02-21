@@ -10,6 +10,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
 import java.util.function.Supplier;
 
@@ -25,9 +27,12 @@ public interface ScribeRegistry {
 
     Supplier<EntityType> registerEntityType(String identifier, Supplier<EntityType> entityTypeSupplier);
 
+    <FC extends FeatureConfiguration> Supplier<Feature<FC>> registerFeature(String identifier, Supplier<Feature<FC>> featureSupplier);
+
     void registerEntityAttributes(Supplier<EntityType> entityTypeSupplier, Supplier<AttributeSupplier.Builder> map);
 
     void registerLayerDefinition(ModelLayerLocation modelLayerLocation, Supplier<LayerDefinition> layerDefinitionSupplier);
 
     void registerEntityRenderer(Supplier<EntityType> entityTypeSupplier, EntityRendererProvider entityRendererProvider);
+
 }

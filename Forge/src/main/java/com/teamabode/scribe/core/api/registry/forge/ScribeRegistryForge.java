@@ -12,6 +12,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -30,6 +32,7 @@ public class ScribeRegistryForge implements ScribeRegistry {
     private final DeferredRegister<Item> itemRegistry;
     private final DeferredRegister<Block> blockRegistry;
     private final DeferredRegister<EntityType<?>> entityTypeRegistry;
+    private final DeferredRegister<Feature<?>> featureRegistry;
 
     public static final Map<Supplier<? extends EntityType<? extends LivingEntity>>, Supplier<AttributeSupplier.Builder>> ATTRIBUTE_MAP = new ConcurrentHashMap<>();
     public static final Map<ModelLayerLocation, Supplier<LayerDefinition>> LAYER_DEFINITIONS = new ConcurrentHashMap<>();
@@ -46,8 +49,8 @@ public class ScribeRegistryForge implements ScribeRegistry {
         entityTypeRegistry = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, modId);
         entityTypeRegistry.register(bus);
 
-//        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-//        bus.addListener(this::addEntityAttributes);
+        featureRegistry = DeferredRegister.create(ForgeRegistries.FEATURES, modId);
+        featureRegistry.register(bus);
     }
 
     public Supplier<Item> registerItem(String identifier, Supplier<Item> itemSupplier) {
@@ -72,6 +75,11 @@ public class ScribeRegistryForge implements ScribeRegistry {
     @Override
     public Supplier<EntityType> registerEntityType(String identifier, Supplier<EntityType> entityTypeSupplier) {
         return null;
+    }
+
+    @Override
+    public <FC extends FeatureConfiguration> Supplier<Feature<FC>> registerFeature(String identifier, Supplier<Feature<FC>> featureSupplier) {
+        return featureRegistry.register(identifier, featureSupplier);
     }
 
     @Override

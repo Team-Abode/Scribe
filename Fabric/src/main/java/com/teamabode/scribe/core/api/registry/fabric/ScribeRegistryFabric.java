@@ -18,6 +18,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 import com.teamabode.scribe.core.api.registry.ScribeRegistry;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
 import java.util.function.Supplier;
 
@@ -60,6 +62,12 @@ public class ScribeRegistryFabric implements ScribeRegistry {
         EntityType entityType = Registry.register(Registry.ENTITY_TYPE, new ResourceLocation(modId, identifier), entityTypeSupplier.get());
 
         return () -> entityType;
+    }
+
+    @Override
+    public <FC extends FeatureConfiguration> Supplier<Feature<FC>> registerFeature(String identifier, Supplier<Feature<FC>> featureSupplier) {
+        var feature = Registry.register(Registry.FEATURE, new ResourceLocation(modId, identifier), featureSupplier.get());
+        return () -> feature;
     }
 
     public void registerEntityAttributes(Supplier<EntityType> entityTypeSupplier, Supplier<AttributeSupplier.Builder> map) {
