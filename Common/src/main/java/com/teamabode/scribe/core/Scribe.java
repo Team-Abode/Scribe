@@ -1,11 +1,14 @@
 package com.teamabode.scribe.core;
 
 import com.teamabode.scribe.core.api.animation.AnimationManager;
+import com.teamabode.scribe.core.api.config.Config;
 import com.teamabode.scribe.core.api.registry.RegistryCreator;
 import com.teamabode.scribe.core.api.registry.ScribeRegistry;
 import com.teamabode.scribe.core.registry.ScribeFeatures;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class Scribe {
     public static final String MOD_ID = "scribe";
