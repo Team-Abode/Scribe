@@ -347,27 +347,14 @@ public class Config {
     }
 
     public Config load(){
-        File file = new File(path.resolve(id + ".json").toString());
-
-        if(!file.exists()){
-            try{
-                Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                FileWriter fileWriter = new FileWriter(path.resolve(id + ".json").toString());
-                fileWriter.write(gson.toJson(root.toJson()));
-                fileWriter.close();
-            }catch (Exception exception){
-                Scribe.LOGGER.warn("Error writing default config at " + path.resolve(id + ".json"));
-                Scribe.LOGGER.error(exception.getMessage());
-                Scribe.LOGGER.error(String.valueOf(exception.getStackTrace()[0].getLineNumber()));
-            }
-        }
-
         try {
             FileReader fileReader = new FileReader(path.resolve(id + ".json").toString());
 
-            Scribe.LOGGER.warn("Read config file at " + path.resolve(id + ".json"));
-
             JsonObject jsonObject = GsonHelper.parse(fileReader);
+
+            fileReader.close();
+
+            System.out.println("Read config file at " + path.resolve(id + ".json"));
 
             if(!jsonObject.isJsonObject()) throw new AssertionError("Config file must be a json object not an array!");
 
@@ -375,6 +362,18 @@ public class Config {
         } catch (Exception exception) {
             Scribe.LOGGER.warn("Error loading config file at " + path.resolve(id + ".json"));
             Scribe.LOGGER.error(exception.getMessage());
+
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+            try{
+                FileWriter fileWriter = new FileWriter(path.resolve(id + ".json").toString());
+                fileWriter.write(gson.toJson(root.toJson()));
+                fileWriter.close();
+            }catch (Exception exception2){
+                Scribe.LOGGER.warn("Error writing default config at " + path.resolve(id + ".json"));
+                Scribe.LOGGER.error(exception2.getMessage());
+                Scribe.LOGGER.error(String.valueOf(exception2.getStackTrace()[0].getLineNumber()));
+            }
         }
 
         root.handle();
