@@ -15,7 +15,6 @@ public class Scribe {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final AnimationManager ANIMATION_MANAGER = new AnimationManager();
     public static final ScribeRegistry REGISTRY = RegistryCreator.getRegistry("scribe");
-    public static Config config = Config.define(MOD_ID).property("test", "goodbye").load();
 
     public static void initialize() {
         ScribeFeatures.init();

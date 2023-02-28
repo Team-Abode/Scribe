@@ -215,13 +215,15 @@ public class Config {
 
             handler.accept(group);
 
-            properties.put(key, new Property<>(key, group, passedGroup -> group.handle(), jsonObject -> GsonHelper.isObjectNode(jsonObject, key), jsonObject -> group.load(jsonObject.getAsJsonObject(key)), value -> convertToJsonArray((List<Object>) value)));
+            properties.put(
+                    key,
+                    new Property<>(key, group, passedGroup -> group.handle(), jsonObject -> GsonHelper.isObjectNode(jsonObject, key), jsonObject -> group.load(jsonObject.getAsJsonObject(key)), Group::toJson));
 
             return this;
         }
 
         public Group group(String key, Group group){
-            properties.put(key, new Property<>(key, group, passedGroup -> group.handle(), jsonObject -> GsonHelper.isObjectNode(jsonObject, key), jsonObject -> group.load(jsonObject.getAsJsonObject(key)), value -> convertToJsonArray((List<Object>) value)));
+            properties.put(key, new Property<>(key, group, passedGroup -> group.handle(), jsonObject -> GsonHelper.isObjectNode(jsonObject, key), jsonObject -> group.load(jsonObject.getAsJsonObject(key)), Group::toJson));
 
             return this;
         }
@@ -356,6 +358,7 @@ public class Config {
             }catch (Exception exception){
                 Scribe.LOGGER.warn("Error writing default config at " + path.resolve(id + ".json"));
                 Scribe.LOGGER.error(exception.getMessage());
+                Scribe.LOGGER.error(String.valueOf(exception.getStackTrace()[0].getLineNumber()));
             }
         }
 
