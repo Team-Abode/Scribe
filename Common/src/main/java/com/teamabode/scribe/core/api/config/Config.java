@@ -1,9 +1,6 @@
 package com.teamabode.scribe.core.api.config;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
+import com.google.gson.*;
 import com.google.gson.stream.JsonWriter;
 import com.teamabode.scribe.core.Scribe;
 import dev.architectury.injectables.annotations.ExpectPlatform;
@@ -352,8 +349,9 @@ public class Config {
 
         if(!file.exists()){
             try{
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 FileWriter fileWriter = new FileWriter(path.resolve(id + ".json").toString());
-                fileWriter.write(root.toJson().toString());
+                fileWriter.write(gson.toJson(root.toJson()));
                 fileWriter.close();
             }catch (Exception exception){
                 Scribe.LOGGER.warn("Error writing default config at " + path.resolve(id + ".json"));
